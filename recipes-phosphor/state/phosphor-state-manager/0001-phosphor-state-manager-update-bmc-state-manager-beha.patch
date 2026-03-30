@@ -1,0 +1,33 @@
+From ac4279fc60e5b06d1d6891ca1b09c6d796e968c8 Mon Sep 17 00:00:00 2001
+From: simon <lsmingsss@163.com>
+Date: Mon, 30 Mar 2026 21:37:09 +0800
+Subject: [PATCH] phosphor-state-manager: update bmc state manager behavior
+
+Upstream-Status: Inappropriate [local customization]
+Signed-off-by: simon <lsmingsss@163.com>
+---
+ bmc_state_manager_main.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/bmc_state_manager_main.cpp b/bmc_state_manager_main.cpp
+index 2b34ea8..81ec0f8 100644
+--- a/bmc_state_manager_main.cpp
++++ b/bmc_state_manager_main.cpp
+@@ -4,6 +4,8 @@
+ 
+ #include <sdbusplus/bus.hpp>
+ 
++#include <iostream>
++
+ using BMCState = sdbusplus::server::xyz::openbmc_project::state::BMC;
+ 
+ int main()
+@@ -24,6 +26,8 @@ int main()
+ 
+     bus.request_name(BMCState::interface);
+ 
++    std::cout<<"Hello World,simon. again! " << std::endl;
++
+     while (true)
+     {
+         bus.process_discard();
